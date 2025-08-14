@@ -1,9 +1,9 @@
 import requests
 import json
 
-URL = "https://api.nbp.pl/api/exchangerates/tables/a"
+URL_NBP = "https://api.nbp.pl/api/exchangerates/tables/a"
 
-data = requests.get(URL)
+data = requests.get(URL_NBP)
 json_data = json.loads(data.content)
 
 waluta_uzytkownika = input(str("Podaj jaką walutę chcesz sprawdzić: "))
@@ -20,7 +20,3 @@ try:
 except NameError as error:
     print(error)
     
-        
-
-# print(json_data[0]['rates'][0]['code'])
-# print(json_data[0]['rates'][0]['mid'] )
